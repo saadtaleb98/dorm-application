@@ -1,9 +1,15 @@
 pipeline {
     agent any
     stages {
-        stage("build"){
-            echo 'this is a simple test';
+        stage('Build') {
+            steps {
+                echo 'This is a simple test'
+            }
         }
-      
+    }
+    post {
+        always {
+            echo 'Pipeline has completed'
+        }
     }
 }
